@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
-import TodoInput from './ToDoInput.jsx'
+import TodoInput from './TodoInput.jsx'
 import TodoList from './TodoList.jsx'
 
 
