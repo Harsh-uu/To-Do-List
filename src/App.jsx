@@ -17,7 +17,7 @@ function App() {
     setListTodo([...newList])
   }
   return (
-    <div className=' min-h-screen  relative '>
+    <div className=' h-fit  relative border-4 border-gray-900 rounded-3xl bg-white my-8 max-w-3xl w-[60%] mx-auto'>
       <div className="">
         <h1 className='font-black text-6xl text-center text-white mt-5 font-bebas tracking-tight bg-slate-800 pb-1'>TO-DO LIST</h1>
         <TodoInput addList={addList}/>

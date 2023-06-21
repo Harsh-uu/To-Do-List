@@ -3,8 +3,8 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 
 function TodoList(props) {
   return (
-    <nav className='flex justify-center bg-slate-800 text-white my-1'>
-    <li className="list-none max-w-lg w-[50%] mx-0 my-4">
+    <nav className='flex justify-center text-gray-800 my-2'>
+    <li className="list-none max-w-lg w-[50%] mx-0 my-4 text-xl">
         {props.item}
     </li>
     <span className='my-5'>
@@ -12,7 +12,8 @@ function TodoList(props) {
             onClick={e=>{
             props.deleteItem(props.index)
             }}
-            className="cursor-pointer hover:animate-wiggle hover:text-red-500 hover:text-lg ease-in-out"
+            className="text-slate-700
+            cursor-pointer hover:animate-wiggle hover:text-red-500"
             />
     </span>
     

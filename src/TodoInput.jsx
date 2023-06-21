@@ -10,11 +10,11 @@ function ToDoInput(props) {
         }
     }
     return (
-    <div className="max-w-xl w-[60%] mx-auto my-8 relative flex">
+    <div className="max-w-xl w-[65%] mx-auto my-8 relative flex">
         <input 
         type="text" 
         className='w-full h-12 bg-slate-300
-        rounded-l-full placeholder:text-slate-500 placeholder:text-xl px-6 text-slate-800 text-xl focus:outline-none focus:placeholder:text-slate-300' placeholder='Enter your todo'
+        rounded-l-full placeholder:text-slate-500 placeholder:text-lg px-6 text-slate-800 text-lg focus:outline-none focus:placeholder:text-slate-300' placeholder='Enter your todo'
         value={InputText}
         onChange={e=>{
             setInputText(e.target.value)
