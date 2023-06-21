@@ -6,6 +6,7 @@ function TodoList(props) {
     <nav className='flex justify-center text-gray-800 my-2'>
     <li className="list-none max-w-lg w-[50%] mx-0 my-4 text-xl">
         {props.item}
+        <hr className='text-red-500' />
     </li>
     <span className='my-5'>
             <RiDeleteBin6Line
@@ -13,7 +14,7 @@ function TodoList(props) {
             props.deleteItem(props.index)
             }}
             className="text-slate-700
-            cursor-pointer hover:animate-wiggle hover:text-red-500"
+            cursor-pointer hover:animate-wiggle hover:text-red-500 text-xl"
             />
     </span>
     
