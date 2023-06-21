@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
-import TodoInput from './ToDoInput.jsx'
+import TodoInput from './TodoInput.jsx'
 import TodoList from './TodoList.jsx'
 
 
@@ -17,11 +17,10 @@ function App() {
     setListTodo([...newList])
   }
   return (
-    <div className='main-container'>
-      <div className="center-container">
+    <div className=' min-h-screen  relative '>
+      <div className="">
+        <h1 className='font-black text-6xl text-center text-white mt-5 font-bebas tracking-tight bg-slate-800 pb-1'>TO-DO LIST</h1>
         <TodoInput addList={addList}/>
-        <h1>TODO</h1>
-        <hr />
         {listTodo.map((listItem, i) => {
           return(
             <TodoList index={i} item={listItem} key={i} deleteItem={deleteListItem}/>
