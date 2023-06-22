@@ -14,7 +14,7 @@ function ToDoInput(props) {
         <input 
         type="text" 
         className='w-[60%] h-12 bg-[#d4cfc4]
-        rounded-l-lg placeholder:text-slate-100 placeholder:text-lg px-6 min-w-fit text-slate-900 text-lg focus:outline-none focus:placeholder:text-slate-700 border-l-2 border-b-2 border-t-2 border-slate-900 sm:h-16 sm:w-[80%] sm:border-slate-100 sm:placeholder:text-slate-700 sm:focus:placeholder:text-slate-200 md:h-20 md:placeholder:text-xl md:text-xl md:w-[90%]' placeholder='Enter your todo'
+        rounded-l-lg placeholder:text-slate-700 placeholder:text-lg px-6 min-w-fit text-slate-900 text-lg focus:outline-none focus:placeholder:text-[#f4f4f0] border-l-2 border-b-2 border-t-2 border-slate-900 sm:h-16 sm:w-[80%] sm:border-slate-100 sm:placeholder:text-slate-700 sm:focus:placeholder:text-slate-200 md:h-20 md:placeholder:text-xl md:text-xl md:w-[90%]' placeholder='Enter your todo'
         value={InputText}
         onChange={e=>{
             setInputText(e.target.value)

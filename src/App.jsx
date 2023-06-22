@@ -18,8 +18,8 @@ function App() {
     setListTodo([...newList])
   }
   return (
-    <div className='border-2 border-red-500 min-h-screen grid place-items-center'>
-    <div className=' h-fit min-w-fit  relative rounded-lg bg-[#d4cfc4] max-w-3xl w-[80%] mx-auto grid place-items-center my-10 ring-2 ring-slate-900 ring-opacity-20 pb-7'>
+    <div className=' min-h-screen grid place-items-center'>
+    <div className=' h-fit min-w-fit  relative rounded-lg bg-[#d4cfc4] max-w-3xl w-[70%] mx-auto grid place-items-center my-10 ring-2 ring-slate-900 ring-opacity-20 pb-7'>
       <div className="">
         <h1 className='font-black text-6xl sm:text-7xl md:text-8xl text-center text-slate-900 mt-5 font-bebas tracking-tight p-4 '>TO-DO LIST</h1>
         <TodoInput addList={addList}/>
