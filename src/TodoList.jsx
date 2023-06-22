@@ -1,19 +1,18 @@
 import React from 'react'
-import { RiDeleteBin6Line } from "react-icons/ri";
+import { RxCross2 } from "react-icons/rx";
 
 function TodoList(props) {
   return (
-    <nav className='flex justify-center min-w-fit text-slate-900 my-4 flex-wrap  border-2 border-black rounded-md font-bold font-mono hover:-translate-y-[0.300rem] hover:-translate-x-0.5 hover:bg-[#f4f4f0] hover:ease-in-out max-w-[90%] h-14 mx-auto sm:h-[4.6rem] md:h-[6rem] md:max-w-[100%] group hover:border-b-4 hover:border-r-4 hover:border-black'>
-    <li className="list-none max-w-lg w-[70%] mx-0 my-auto text-xl break-words sm:text-2xl">
+    <nav className='grid grid-cols-3 border-2 border-slate-900 rounded-lg max-w-[80%] mx-auto my-4 last:mb-8 hover:bg-[#f4f4f0] hover:-translate-y-1.5 hover:-translate-x-1.5 hover:border-b-4 hover:border-r-4'>
+    <li className="list-none my-2 ml-4 break-words col-span-2 font-mono ">
         {props.item}
     </li>
-    <div className='mx-2 bg-[#d4cfc4] rounded-full border-2 border-black w-9 h-9 my-auto sm:w-11 sm:h-11 invisible group-hover:visible'>
-            <RiDeleteBin6Line
+    <div className=' border-2 border-slate-900 rounded-full grid place-items-center my-auto mr-5 ml-5 mx-auto w-6 h-6 col-span-1 grid-flow-col-dense bg-[#d4cfc4]'>
+            <RxCross2
             onClick={e=>{
             props.deleteItem(props.index)
             }}
-            className="text-slate-900
-            cursor-pointer hover:animate-wiggle hover:text-red-700 text-xl bg-[#d4cfc4] rounder-full sm:text-2xl mx-auto my-[0.39rem] sm:my-[0.47rem]"
+            className="hover:animate-wiggle hover:text-red-600 text-sm font-black"
             />
     </div>
     

@@ -9,6 +9,11 @@ export default {
     extend: {
         display: ["group-hover"],
     },
+    extend: {
+      backgroundImage:{
+        'hero-pattern': "url('/src/assets/5566879.jpg)",
+      }
+    }
 },
   theme: {
     extend: {

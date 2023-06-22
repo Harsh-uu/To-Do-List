@@ -18,10 +18,9 @@ function App() {
     setListTodo([...newList])
   }
   return (
-    <div className=' min-h-screen grid place-items-center'>
-    <div className=' h-fit min-w-fit  relative rounded-lg bg-[#d4cfc4] max-w-3xl w-[70%] mx-auto grid place-items-center my-10 ring-2 ring-slate-900 ring-opacity-20 pb-7'>
-      <div className="">
-        <h1 className='font-black text-6xl sm:text-7xl md:text-8xl text-center text-slate-900 mt-5 font-bebas tracking-tight p-4 '>TO-DO LIST</h1>
+    <div className='min-h-screen grid place-items-center'>
+      <div className=" ring-2 ring-white ring-opacity-20 rounded-lg min-w-[80%] max-w-[80%] bg-[#d4cfc4] shadow-lg shadow-amber-900/20">
+        <h1 className='font-caveat font-black text-6xl mt-8 mb-8 text-center bg-white rounded-sm'>-ToDoList-</h1>
         <TodoInput addList={addList}/>
         {listTodo.map((listItem, i) => {
           return(
@@ -31,7 +30,6 @@ function App() {
         }
       </div>
     </div>
-  </div>
   )
 }
 
