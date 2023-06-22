@@ -5,6 +5,11 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   darkMode: 'class',
+  variants: {
+    extend: {
+        display: ["group-hover"],
+    },
+},
   theme: {
     extend: {
       keyframes: {
