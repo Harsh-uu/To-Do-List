@@ -1,35 +1,25 @@
-import React from 'react'
-import { useState } from 'react'
-import { RiAddFill, RiCheckLine } from "react-icons/ri";
-function ToDoInput(props) {
-    const [InputText, setInputText] = useState('');
-    const handleEnterPress = (e)=>{
-        if(e.keyCode===13){
-            props.addList(InputText)
-            setInputText("")
-        }
-    }
-    return (
-    <div className="flex justify-evenly pl-3 pr-3 mb-9">
-        <input 
-        type="text" 
-        className='border-b-2 border-slate-900 bg-[#d4cfc4] placeholder:text-white placeholder:text-lg text-center max-w-[65%] focus:outline-none text-comfort placeholder:font-black focus:placeholder:text-[#d4cfc4] text-lg font-black focus:border-white' placeholder='Type Here!'
-        value={InputText}
-        onChange={e=>{
-            setInputText(e.target.value)
-        }}
-        onKeyDown={handleEnterPress}
-        />
-        <div className='bg-slate-900 rounded-full grid place-items-center w-7 hover:bg-white group'>
-        <button className=' '
-        onClick={()=>{
-        props.addList(InputText)
-        setInputText("")
-      }}>{InputText==('')?<RiAddFill className='text-xl text-white hover:animate-spin group-hover:text-slate-900'/>:<RiCheckLine className=' text-xl group-hover:text-green-500 text-white  '/>}</button>      
-      
-        </div>
-    </div>
+import { useState } from "react";
+import { RiCheckLine } from "react-icons/ri";
+
+export default function ToDoInput({ onSubmit }) {
+  const [newItem, setNewItem] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (newItem === "") return;
+    onSubmit(newItem);
+    setNewItem("");
+  };
+
+  return (
+    <form onSubmit={handleSubmit} className="text-center mb-6">
+      <input
+        className='bg-[#d4cfc4] border-2 border-black text-lg px-3 mb-2 text-center placeholder:text-black outline-none' placeholder='Type Here!'
+        type="text"
+        value={newItem}
+        onChange={(e) => setNewItem(e.target.value)}
+      />
+        <button className=" hover:text-green-400 px-3 bg-white border-black text-lg border-2 sm:border-l-0 ">Add</button>
+    </form>
   );
 }
-
-export default ToDoInput

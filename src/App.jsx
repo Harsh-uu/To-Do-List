@@ -1,37 +1,41 @@
-import React from 'react'
-import { useState } from 'react'
-import TodoInput from './TodoInput.jsx'
-import TodoList from './TodoList.jsx'
-// import { IconName } from "react-icons/hi";
+import { useEffect, useState } from "react";
+import ToDoInput from "./TodoInput";
+import ToDoLists from "./ToDoLists";
 
+export default function App() {
+  const [todos, setTodos] = useState(() => {
+    const localValue = localStorage.getItem("ITEMS");
+    if (localValue == null) return [];
+    return JSON.parse(localValue);
+  });
 
+  useEffect(() => {
+    localStorage.setItem("ITEMS", JSON.stringify(todos));
+  }, [todos]);
 
-function App() {
-  const [listTodo, setListTodo] = useState([]);
-  let addList = (InputText) => {
-    if(InputText!=="")
-      setListTodo([...listTodo, InputText]);
+  function addTodo(title) {
+    setTodos((currentItem) => {
+      return [...currentItem, { id: crypto.randomUUID(), title }];
+    });
   }
-  const deleteListItem = (key) => {
-    let newList = [...listTodo];
-    newList.splice(key, 1);
-    setListTodo([...newList])
-  }
+
+  const handleDelete = (id) => {
+    setTodos((currentItem) => {
+      return currentItem.filter((todo) => todo.id != id);
+    });
+  };
+
   return (
-    <div className='min-h-screen grid place-items-center'>
-      <div className=" ring-2 ring-white ring-opacity-20 rounded-lg min-w-[80%] max-w-[80%] bg-[#d4cfc4] shadow-lg shadow-amber-900/20">
-        <h1 className='font-caveat font-black text-6xl mt-8 mb-8 text-center bg-white rounded-sm'>-ToDoList-</h1>
-        <TodoInput addList={addList}/>
-        {listTodo.map((listItem, i) => {
-          return(
-            <TodoList index={i} item={listItem} key={i} deleteItem={deleteListItem}/>
-          )
-        })
-        }
+    <>
+      <div className="grid place-content-center h-screen">
+        <div className="w-72 sm:w-96 rounded-lg h-fit bg-[#d4cfc4] shadow-lg shadow-amber-900/20 ">
+          <h1 className="font-caveat font-black text-6xl my-8 text-center bg-white rounded-sm">
+            -ToDoList-
+          </h1>
+          <ToDoInput onSubmit={addTodo} />
+          <ToDoLists todos={todos} handleDelete={handleDelete} />
+        </div>
       </div>
-    </div>
-  )
+    </>
+  );
 }
-
-
-export default App
